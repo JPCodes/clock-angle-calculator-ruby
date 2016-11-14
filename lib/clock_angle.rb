@@ -2,7 +2,7 @@ class String
   define_method(:clock_angle) do
     result = []
     time_input = self.to_i()
-    hour_degree = time_input * 30
+    hour_degree = (time_input * 30) + (self.to_f.-(time_input) * 30)
     min_degree = (self.to_f.-(time_input) * 12) * 30
     hands_difference = hour_degree - min_degree
     if hands_difference < 0
